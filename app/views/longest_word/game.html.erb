@@ -1,0 +1,16 @@
+<!-- <h1>LongestWord#game</h1>
+<p>Find me in app/views/longest_word/game.html.erb</p> -->
+
+<p><%=@letters%></p>  <!--  @letter will give an array of strings["A","B","D"] -->
+<center>
+  <form action="/score">  <!-- /scorebecuse we are asking the form to direct us to the score page -->
+    <label for="question">What is your longest word?</label>
+    <input type="text" id="question" name="user_longest_word" placeholder="what time is it?">
+    <input type="hidden" name="grid" value="<%=@letters.join('')%>"> <!-- hidden we do not not want to make the user see again the array of letters as it has alraedy printed in the first line -->
+    <input type="hidden" name="start_time" value="<%=Time.now%>">
+
+    <input type="submit" value="Go on!">
+  </form>
+</center>
+
+
